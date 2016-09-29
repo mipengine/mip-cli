@@ -3,6 +3,19 @@
     "description": "Command line interface for MIP",
     "version": "1.0.0-alpha.1",
 
+    "bin": {
+        "mip": "./bin/mip"
+    },
+
+    "keywords": [
+        "mip",
+        "cli"
+    ],
+
+    "dependencies": {
+        "minimist": "^1.2.0"
+    },
+
     "contributors": [
         { "name": "mkwiser", "email": "kekee000@gmail.com" },
         { "name": "erik", "email": "errorrik@gmail.com" }
