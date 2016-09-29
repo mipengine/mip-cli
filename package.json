@@ -1,0 +1,16 @@
+{
+    "name": "mip-cli",
+    "description": "Command line interface for MIP",
+    "version": "1.0.0-alpha.1",
+
+    "contributors": [
+        { "name": "mkwiser", "email": "kekee000@gmail.com" },
+        { "name": "erik", "email": "errorrik@gmail.com" }
+    ],
+
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mipengine/mip-cli"
+    }
+}
