@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const cli = require('../lib/cli');
+
+const args = cli.setup({
+    usage: '<page-name>',
+    options: [
+        ['-f, --force', '是否覆盖']
+    ],
+    help: [
+          '  Examples:',
+          cli.chalk.gray('    # 添加一个mip页面'),
+          '    $ mip add page.html',
+      ].join('\n')
+});
+
+var fileName = args[0];
+var modules = args.slice(1);
+
+if (!fileName.match(/^[\w\.\-$]+$/)) {
+    cli.warn('请输入合法文件名称!');
+    return;
+}
+
+require('../lib/add').exec(fileName, cli.program.force, []);

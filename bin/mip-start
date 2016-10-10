@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+const cli = require('../lib/cli');
+const fs = require('fs');
+const path = require('path');
+
+const args = cli.setup({
+    noArgs: true,
+    options: [
+        ['-p, --port', '启动端口号', parseInt]
+    ],
+    help: [
+          '启动MIP调试服务器'
+      ].join('\n')
+});
+
+var defaultConfig = require('../boilerplate/mip.config');
+defaultConfig.baseDir = process.cwd();
+
+var configPath = path.join(defaultConfig.baseDir, 'mip.config');
+// 加载用户定义配置
+if (fs.existsSync(configPath)) {
+    Object.assign(defaultConfig, require(configPath));
+    // 设置是否extensions目录，用于调试时启用不同的配置
+    defaultConfig.isExtensionsDir = false;
+}
+
+// cli 配置
+if (cli.program.port) {
+    defaultConfig.port = cli.program.port;
+}
+
+require('../lib/start').exec(defaultConfig);
+

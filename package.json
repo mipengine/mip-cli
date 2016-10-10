@@ -1,29 +1,53 @@
 {
-    "name": "mip-cli",
-    "description": "Command line interface for MIP",
-    "version": "1.0.0-alpha.1",
-
-    "bin": {
-        "mip": "./bin/mip"
+  "name": "mip-cli",
+  "version": "1.0.0-alpha.1",
+  "description": "Command line interface for MIP",
+  "preferGlobal": true,
+  "bin": {
+    "mip": "bin/mip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mipengine/mip-cli"
+  },
+  "keywords": [
+    "mip",
+    "cli",
+    "mip-cli"
+  ],
+  "contributors": [
+    {
+      "name": "mkwiser",
+      "email": "kekee000@gmail.com"
     },
-
-    "keywords": [
-        "mip",
-        "cli"
-    ],
-
-    "dependencies": {
-        "minimist": "^1.2.0"
-    },
-
-    "contributors": [
-        { "name": "mkwiser", "email": "kekee000@gmail.com" },
-        { "name": "erik", "email": "errorrik@gmail.com" }
-    ],
-
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mipengine/mip-cli"
+    {
+      "name": "erik",
+      "email": "errorrik@gmail.com"
     }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.2",
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "download-git-repo": "^0.1.1",
+    "etpl": "^3.2.0",
+    "express": "^4.14.0",
+    "mip-extension-optimizer": "^1.0.0",
+    "mip-validator": "^1.2.12"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "files": [
+    "bin",
+    "boilerplate",
+    "lib"
+  ]
 }

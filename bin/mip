@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 
-'use strict';
+const cli = require('../lib/cli');
 
-require('../lib/main')();
+require('commander')
+    .version(require('../package').version)
+    .usage('<command> [options]')
+    .command('init', cli.chalk.green('初始化MIP项目'))
+    .command('add', cli.chalk.green('添加一个MIP网页'))
+    .command('addelement', cli.chalk.green('添加一个MIP组件'))
+    .command('validate', cli.chalk.green('验证MIP网页'))
+    .command('start', cli.chalk.green('启动预览'))
+    .parse(process.argv);

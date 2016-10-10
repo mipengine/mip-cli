@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const cli = require('../lib/cli');
+
+const args = cli.setup({
+    noArgs: true,
+    options: [
+        ['-f, --force', '强制初始化']
+    ],
+    help: [
+          '初始化mip页面项目'
+      ].join('\n')
+});
+
+require('../lib/init').exec(cli.program.force);
+
