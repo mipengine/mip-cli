@@ -8,7 +8,8 @@ const args = cli.setup({
         ['-f, --force', '强制初始化']
     ],
     help: [
-          '初始化mip页面项目'
+          '初始化mip页面项目',
+          '    $ mip init',
       ].join('\n')
 });
 

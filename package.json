@@ -36,6 +36,7 @@
     "download-git-repo": "^0.1.1",
     "etpl": "^3.2.0",
     "express": "^4.14.0",
+    "livereload": "^0.5.0",
     "mip-extension-optimizer": "^1.0.0",
     "mip-validator": "^1.2.12"
   },

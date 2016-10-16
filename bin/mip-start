@@ -7,10 +7,12 @@ const path = require('path');
 const args = cli.setup({
     noArgs: true,
     options: [
-        ['-p, --port', '启动端口号', parseInt]
+        ['-p, --port <n>', '启动端口号', parseInt],
+        ['-l, --livereload <value>', '启用调试自动刷新']
     ],
     help: [
-          '启动MIP调试服务器'
+          '启动MIP调试服务器',
+          '    $ mip start',
       ].join('\n')
 });
 
@@ -29,6 +31,13 @@ if (fs.existsSync(configPath)) {
 if (cli.program.port) {
     defaultConfig.port = cli.program.port;
 }
+
+// livereload 配置，默认开启，可设置关闭
+if (cli.program.livereload) {
+    defaultConfig.livereload = cli.program.livereload !== 'false'
+        && cli.program.livereload !== '0';
+}
+
 
 require('../lib/start').exec(defaultConfig);
 
