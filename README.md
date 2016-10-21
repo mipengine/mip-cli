@@ -81,7 +81,7 @@ $ mip validate index.html [...]
 在当前项目或者`mip-extensions`仓库中启动mip网页调试器：
 
 ``` bash
-$ mip start
+$ mip server
 ```
 
 注意：调试`mip-extensions`仓库组件时，会读取组件中`READEME.md`的使用示例，因此组件的`README.md`中
@@ -103,7 +103,7 @@ $ [sudo] npm install -g mip-cli --registry=https://registry.npm.taobao.org
 
 ### 预览组件
 
-进入`mip-extensions`仓库，使用`mip start`命令启动调试器
+进入`mip-extensions`仓库，使用`mip server`命令启动调试器
 访问` http://127.0.0.1:8000`查看看组件列表，点击组件链接进行预览
 
 ### License

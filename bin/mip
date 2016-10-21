@@ -9,5 +9,5 @@ require('commander')
     .command('add', cli.chalk.green('添加一个MIP网页'))
     .command('addelement', cli.chalk.green('添加一个MIP组件'))
     .command('validate', cli.chalk.green('验证MIP网页'))
-    .command('start', cli.chalk.green('启动预览'))
+    .command('server', cli.chalk.green('启动MIP调试服务器'))
     .parse(process.argv);

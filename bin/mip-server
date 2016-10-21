@@ -12,7 +12,7 @@ const args = cli.setup({
     ],
     help: [
           '启动MIP调试服务器',
-          '    $ mip start',
+          '    $ mip server',
       ].join('\n')
 });
 
@@ -39,5 +39,5 @@ if (cli.program.livereload) {
 }
 
 
-require('../lib/start').exec(defaultConfig);
+require('../lib/server-start').exec(defaultConfig);
 
