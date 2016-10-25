@@ -7,10 +7,10 @@ const args = cli.setup({
     options: [
     ],
     help: [
-          '更新cli模块',
+          '更新cli模块，默认每天检查一次更新',
           '    $ mip update',
       ].join('\n')
 });
 
-require('../lib/update').exec();
+require('../lib/update').exec(true);
 

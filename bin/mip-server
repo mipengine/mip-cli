@@ -3,6 +3,7 @@
 const cli = require('../lib/cli');
 const fs = require('fs');
 const path = require('path');
+const boilerplate = require('mip-cli-boilerplate');
 
 const args = cli.setup({
     noArgs: true,
@@ -16,7 +17,7 @@ const args = cli.setup({
       ].join('\n')
 });
 
-var defaultConfig = require('../boilerplate/mip.config');
+var defaultConfig = require(boilerplate.TEMPLATE_DIR + '/mip.config');
 defaultConfig.baseDir = process.cwd();
 
 var configPath = path.join(defaultConfig.baseDir, 'mip.config');

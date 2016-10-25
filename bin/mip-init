@@ -13,5 +13,8 @@ const args = cli.setup({
       ].join('\n')
 });
 
-require('../lib/init').exec(cli.program.force);
+// 检查模板更新后启动命令
+require('../lib/update').exec().then(() => {
+    require('../lib/init').exec(cli.program.force);
+});
 

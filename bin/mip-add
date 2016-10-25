@@ -22,4 +22,7 @@ if (!fileName.match(/^[\w\.\-$]+$/)) {
     return;
 }
 
-require('../lib/add').exec(fileName, cli.program.force, []);
+// 检查模板更新后启动命令
+require('../lib/update').exec().then(() => {
+  require('../lib/add').exec(fileName, cli.program.force, []);
+});

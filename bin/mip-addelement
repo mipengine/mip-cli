@@ -15,11 +15,14 @@ const args = cli.setup({
 });
 
 var elementName = args[0];
-var force = !!cli.program.force;
 
 if (!elementName.match(/^mip-[\w\-]+$/)) {
     cli.warn('请输入合法组件名称：mip-xxx !');
     return;
 }
 
-require('../lib/add-element').exec(elementName, force);
+
+// 检查模板更新后启动命令
+require('../lib/update').exec().then(() => {
+  require('../lib/add-element').exec(elementName, cli.program.force);
+});
