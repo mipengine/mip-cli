@@ -30,15 +30,16 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "async": "^2.0.0-rc.2",
     "chalk": "^1.1.1",
+    "child_process": "^1.0.2",
     "commander": "^2.9.0",
-    "download-git-repo": "^0.1.1",
     "etpl": "^3.2.0",
     "express": "^4.14.0",
     "livereload": "^0.5.0",
+    "mip-cli-boilerplate": "file:../mip-cli-boilerplate",
     "mip-extension-optimizer": "^1.0.15",
-    "mip-validator": "^1.2.13"
+    "mip-validator": "^1.2.13",
+    "request": "^2.75.0"
   },
   "devDependencies": {
     "mocha": "^2.4.5"

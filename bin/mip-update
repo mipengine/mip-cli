@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const cli = require('../lib/cli');
+
+const args = cli.setup({
+    noArgs: true,
+    options: [
+    ],
+    help: [
+          '更新cli模块',
+          '    $ mip update',
+      ].join('\n')
+});
+
+require('../lib/update').exec();
+
