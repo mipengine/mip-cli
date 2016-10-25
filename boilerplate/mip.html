@@ -15,10 +15,14 @@
     </style>
 </head>
 
-<body>
+<body>{%if: ${preset}%}${preset|raw}{%/if%}
 <!-- 正文 -->
-${body|raw}
-
+{%if: ${examples}%}
+    {%for: ${examples} as ${example}%}
+    <p style="text-align:left;font-size:18px;margin-top:20px;color: green">${example.title}</p>
+    <p style="text-align:left;margin-bottom:10px;color:gray">${example.description}</p>${example.code|raw}
+    {%/for%}
+{%/if%}
 <script src="https://mipcache.bdstatic.com/static/mipmain-v1.1.0.js"></script>
 {%for: ${elements} as ${element}%}<script src="${element}"></script>
 {%/for%}
