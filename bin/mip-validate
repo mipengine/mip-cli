@@ -12,5 +12,7 @@ const args = cli.setup({
 });
 
 if (args.length) {
-    require('../lib/validate').exec(args);
+    require('../lib/validate').exec({
+        files: args
+    });
 }

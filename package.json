@@ -1,6 +1,6 @@
 {
   "name": "mip-cli",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "Command line interface for MIP",
   "preferGlobal": true,
   "bin": {
@@ -27,7 +27,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "npm run lint"
+    "lint": "fecs . --rule --reporter=baidu",
+    "test": "env NODE_ENV=test mocha --recursive test/spec/**/*.spec.js"
   },
   "dependencies": {
     "chalk": "^1.1.1",
@@ -40,9 +41,6 @@
     "mip-extension-optimizer": "^1.0.15",
     "mip-validator": "^1.2.13",
     "request": "^2.75.0"
-  },
-  "devDependencies": {
-    "mocha": "^2.4.5"
   },
   "engines": {
     "node": ">=4.0.0"

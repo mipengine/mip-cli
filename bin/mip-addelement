@@ -8,10 +8,10 @@ const args = cli.setup({
         ['-f, --force', '是否覆盖']
     ],
     help: [
-          '  Examples:',
-          cli.chalk.gray('    # 添加一个mip组件'),
-          '    $ mip add mip-element',
-      ].join('\n')
+        '  Examples:',
+        cli.chalk.gray('    # 添加一个mip组件'),
+        '    $ mip add mip-element',
+    ].join('\n')
 });
 
 var elementName = args[0];
@@ -24,5 +24,8 @@ if (!elementName.match(/^mip-[\w\-]+$/)) {
 
 // 检查模板更新后启动命令
 require('../lib/update').exec().then(() => {
-  require('../lib/add-element').exec(elementName, cli.program.force);
+    require('../lib/add-element').exec({
+        elementName: elementName,
+        force: cli.program.force
+    });
 });

@@ -8,10 +8,10 @@ const args = cli.setup({
         ['-f, --force', '是否覆盖']
     ],
     help: [
-          '  Examples:',
-          cli.chalk.gray('    # 添加一个mip页面'),
-          '    $ mip add page.html',
-      ].join('\n')
+        '    Examples:',
+        cli.chalk.gray('    # 添加一个mip页面'),
+        '        $ mip add page.html',
+    ].join('\n')
 });
 
 var fileName = args[0];
@@ -24,5 +24,9 @@ if (!fileName.match(/^[\w\.\-$]+$/)) {
 
 // 检查模板更新后启动命令
 require('../lib/update').exec().then(() => {
-  require('../lib/add').exec(fileName, cli.program.force, []);
+    require('../lib/add').exec({
+        fileName: fileName,
+        force: cli.program.force,
+        modules: []
+    });
 });
