@@ -2,12 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const cmdValidate = require('../../lib/validate');
 const cli = require('../../lib/cli');
-const TMP_PATH = path.resolve(process.cwd(), 'test/tmp');
+const TMP_PATH = path.resolve(process.cwd(), 'test/test-project');
 const assert = require('assert');
 
 describe('validate.js ', function () {
     before(function () {
-        fs.mkdirSync(TMP_PATH);
         cli.__log = cli.log;
         // 代理log内容
         cli.log = function () {
@@ -16,15 +15,7 @@ describe('validate.js ', function () {
         };
     });
 
-    after(function(done) {
-        require('child_process').exec('rm -r ' + TMP_PATH,
-        (err, stdout) => {
-            if (err) {
-                throw new Error('clean tmp path error!');
-                return;
-            }
-            done();
-        });
+    after(function() {
         cli.log = cli.__log;
         delete cli.__logMessage;
         delete cli.__log;
@@ -32,11 +23,6 @@ describe('validate.js ', function () {
 
     // test case
     it('validate', function (done) {
-        const filePath = path.resolve(TMP_PATH, 'validate.html');
-        const content = '<!DOCTYPE html><html mip><head></head>'
-            + '<body></body>'
-            + '</html>';
-        fs.writeFileSync(filePath, content);
 
         cmdValidate.exec({
             files: ['validate.html'],

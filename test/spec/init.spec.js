@@ -3,21 +3,14 @@ const path = require('path');
 const cmdInit = require('../../lib/init');
 const TMP_PATH = path.resolve(process.cwd(), 'test/tmp');
 const assert = require('assert');
-
+const del = require('del');
 describe('init.js ', function () {
     before(function () {
         fs.mkdirSync(TMP_PATH);
     });
 
-    after(function(done) {
-        require('child_process').exec('rm -r ' + TMP_PATH,
-        (err, stdout) => {
-            if (err) {
-                throw new Error('clean tmp path error!');
-                return;
-            }
-            done();
-        });
+    after(function() {
+        del.sync(TMP_PATH);
     });
 
     // test case

@@ -49,5 +49,9 @@
     "bin",
     "boilerplate",
     "lib"
-  ]
+  ],
+  "devDependencies": {
+    "del": "^2.2.2",
+    "supertest": "^2.0.1"
+  }
 }
