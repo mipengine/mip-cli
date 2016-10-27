@@ -15,7 +15,7 @@ function getConfigPath(name) {
 
 describe('update.js ', function () {
     before(function (done) {
-        this.timeout(10000);
+        this.timeout(100000);
         const request = require('request');
         request(
             {
@@ -35,7 +35,7 @@ describe('update.js ', function () {
 
     // test case
     it('update', function (done) {
-        this.timeout(10000);
+        this.timeout(100000);
         var promise = cmdUpdate.exec(true);
         // update force
         promise.then((result) => {
@@ -49,7 +49,6 @@ describe('update.js ', function () {
                 }
             }
         }, () => {
-            done();
             assert.ok(false, 'should not throw error!');
         });
 
@@ -70,9 +69,9 @@ describe('update.js ', function () {
 
 
     it('update new version', function (done) {
-        this.timeout(10000);
+        this.timeout(100000);
         const packagePath = path.resolve(__dirname, '../../node_modules/mip-cli-boilerplate/package.json');
-        var package = require(packagePath);
+        var package = JSON.parse(fs.readFileSync(packagePath, 'utf-8'));
         package.version = '0.0.0';
         fs.writeFileSync(packagePath, JSON.stringify(package));
         delete require.cache[packagePath];
@@ -81,7 +80,7 @@ describe('update.js ', function () {
             if (result) {
                 assert.ok(result.latest, 'should have latest version');
                 assert.ok(result.local, 'should have local version');
-                var package = require(packagePath);
+                var package = JSON.parse(fs.readFileSync(packagePath, 'utf-8'));
                 assert.ok(package.version === result.latest, 'should update module to latest');
             }
             done()
