@@ -15,6 +15,7 @@ nodejs 5.x, 6.x 安装模块时，可能会报`node-gyp`相关错误，需要使
 ```
 $ [sudo] npm install --unsafe-perm -g mip-cli
 ```
+nodejs 5.x 安装`bufferutil`模块时可能会报编译错误，建议使用`4.4`或者`6.x`以上版本。
 
 ### 使用
 
@@ -49,6 +50,13 @@ module.exports = {
      * @type {string}
      */
     extensionsDir: '',
+
+    /**
+     * 本地mipmain调试目录，用于调试本地mipmain项目
+     *
+     * @type {string}
+     */
+    mipmainDir: '../../../mip',
 
     /**
      * 启用调试页面自动刷新
@@ -92,6 +100,8 @@ $ mip server
         &lt;mip-xxx&gt;&lt;/mip-xxx&gt;
     ```
 </pre>
+
+配置了`mipmainDir`之后可以调试`mip`引擎。
 
 ----
 

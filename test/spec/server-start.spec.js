@@ -124,3 +124,34 @@ describe('server-start.js extensions', function () {
             });
     });
 });
+
+
+describe('server-start.js mipmain', function () {
+    before(function (done) {
+        //this.timeout(100000)
+        cmdServer.exec({
+            baseDir: path.resolve(process.cwd(), 'test/test-mipmain'),
+            mipPageExt: /\.(?:html|htm|mip)$/i,
+            port: 12458,
+            isExtensionsDir: false,
+            mipmainDir: path.resolve(process.cwd(), '../mip'),
+            livereload: false
+        });
+        setTimeout(done, 100);
+    });
+
+    const HOST = 'http://127.0.0.1:12458';
+
+    it('request mipmain index.html', function (done) {
+        const req = request(HOST);
+        req.get('/index.html')
+            .expect(200)
+            .expect(/\/mipmain\/deps\/esl/)
+            .expect(/\/mipmain\/src\/mip\.js/)
+            .end((err, res) => {
+                assert(!err, 'mip main inject error');
+                done();
+            });
+    });
+});
+
