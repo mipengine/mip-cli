@@ -67,24 +67,35 @@ module.exports = {
 };
 ```
 
+![](./example/mip-init.png)
+
 ----
 在当前项目创建一个mip模板网页：
 
 ``` bash
 $ mip add index.html
 ```
+
+![](./example/mip-add.png)
+
 ----
 在`mip-extensions`仓库中创建一个mip组件：
 
 ``` bash
 $ mip addelement mip-demo
 ```
+
+![](./example/mip-addelement.png)
+
 ----
 验证mip网页：
 
 ``` bash
 $ mip validate index.html [...]
 ```
+
+![](./example/mip-validate.png)
+
 ----
 在当前项目或者`mip-extensions`仓库中启动mip网页调试器：
 
@@ -102,6 +113,16 @@ $ mip server
 </pre>
 
 配置了`mipmainDir`之后可以调试`mip`引擎。
+
+`mip server` 启动多个实例的话会报端口占用错误，需要关闭其他实例或者kill掉占用端口的进程后再启动。
+
+```
+➜  ~ mip server
+INFO livereload server start at: http://172.20.128.110:35730
+ERROR PORT 8000 already in use, please retry again!
+```
+
+![](./example/mip-server.png)
 
 ----
 
