@@ -9,6 +9,7 @@ const args = cli.setup({
     noArgs: true,
     options: [
         ['-p, --port <n>', '启动端口号', parseInt],
+        ['-f, --force', '强制启动，关闭占用端口的进程'],
         ['-l, --livereload <value>', '启用调试自动刷新']
     ],
     help: [
@@ -28,6 +29,7 @@ if (fs.existsSync(configPath)) {
     defaultConfig.isExtensionsDir = false;
 }
 
+
 // cli 配置
 if (cli.program.port) {
     defaultConfig.port = cli.program.port;
@@ -39,6 +41,18 @@ if (cli.program.livereload) {
         && cli.program.livereload !== '0';
 }
 
-
-require('../lib/server-start').exec(defaultConfig);
+// 强制启动，关闭占用端口的进程
+if (cli.program.force) {
+    require('../lib/util/kill-process-byport')({
+        port: defaultConfig.port
+    })
+        .then(() => {
+            require('../lib/server-start').exec(defaultConfig);
+        }, error => {
+            cli.error(error);
+        });
+}
+else {
+    require('../lib/server-start').exec(defaultConfig);
+}
 
