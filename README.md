@@ -125,6 +125,15 @@ ERROR PORT 8000 already in use, please retry again!
 ![](./example/mip-server.png)
 
 ----
+更新mip工具，将mip模板更新到最新版本：
+
+``` bash
+$ mip update
+```
+
+![](./example/mip-update.png)
+
+----
 
 直接从官方 npm registry 安装，可能会由于网络原因，导致安装时间较长或安装失败。此时我们可以选择速度更快的 registry。
 
