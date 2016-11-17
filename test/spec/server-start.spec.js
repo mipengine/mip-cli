@@ -134,7 +134,7 @@ describe('server-start.js mipmain', function () {
             mipPageExt: /\.(?:html|htm|mip)$/i,
             port: 12458,
             isExtensionsDir: false,
-            mipmainDir: path.resolve(process.cwd(), '../mip'),
+            mipDir: path.resolve(process.cwd(), '../mip'),
             livereload: false
         });
         setTimeout(done, 100);
@@ -146,8 +146,8 @@ describe('server-start.js mipmain', function () {
         const req = request(HOST);
         req.get('/index.html')
             .expect(200)
-            .expect(/\/mipmain\/deps\/esl/)
-            .expect(/\/mipmain\/src\/mip\.js/)
+            .expect(/\/mip-local\/deps\/esl/)
+            .expect(/\/mip-local\/src\/mip\.js/)
             .end((err, res) => {
                 assert(!err, 'mip main inject error');
                 done();

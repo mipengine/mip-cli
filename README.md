@@ -52,11 +52,11 @@ module.exports = {
     extensionsDir: '',
 
     /**
-     * 本地mipmain调试目录，用于调试本地mipmain项目
+     * 本地mip调试目录，用于调试本地mip项目
      *
      * @type {string}
      */
-    mipmainDir: '../../../mip',
+    mipDir: '../../../mip',
 
     /**
      * 启用调试页面自动刷新
@@ -112,7 +112,7 @@ $ mip server
     ```
 </pre>
 
-配置了`mipmainDir`之后可以调试`mip`引擎。
+配置了`mipDir`之后可以调试`mip`引擎。
 
 `mip server` 启动多个实例的话会报端口占用错误，需要关闭其他实例或者kill掉占用端口的进程后再启动。
 
