@@ -26,7 +26,7 @@ var configPath = path.join(defaultConfig.baseDir, 'mip.config');
 if (fs.existsSync(configPath)) {
     Object.assign(defaultConfig, require(configPath));
     // 设置是否extensions目录，用于调试时启用不同的配置
-    defaultConfig.isExtensionsDir = false;
+    defaultConfig.isExtensionsDir = defaultConfig.extensionsDir === '.';
 }
 
 
