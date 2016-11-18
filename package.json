@@ -37,7 +37,7 @@
     "etpl": "^3.2.0",
     "express": "^4.14.0",
     "livereload": "^0.5.0",
-    "mip-cli-boilerplate": "^1.0.6",
+    "mip-cli-boilerplate": "^1.0.7",
     "mip-extension-optimizer": "^1.1.0",
     "mip-validator": "^1.2.13",
     "request": "^2.75.0"
