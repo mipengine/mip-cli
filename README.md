@@ -134,6 +134,18 @@ $ mip update
 ![](./example/mip-update.png)
 
 ----
+校验编写的mip组件，可以校验mip组件目录或者mip组件压缩包：
+
+``` bash
+# directory
+$ mip validateelement ./mip-demo
+# zip package
+$ mip validateelement ./mip-demo.zip
+```
+
+![](./example/mip-validateelement.png)
+
+----
 
 直接从官方 npm registry 安装，可能会由于网络原因，导致安装时间较长或安装失败。此时我们可以选择速度更快的 registry。
 

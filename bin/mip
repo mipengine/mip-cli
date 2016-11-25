@@ -15,6 +15,7 @@ require('commander')
     .command('add', cli.chalk.green('添加一个MIP网页'))
     .command('addelement', cli.chalk.green('添加一个MIP组件'))
     .command('validate', cli.chalk.green('验证MIP网页'))
+    .command('validateelement', cli.chalk.green('验证MIP组件'))
     .command('server', cli.chalk.green('启动MIP调试服务器'))
     .command('update', cli.chalk.green('更新cli模块'))
     .parse(process.argv);
