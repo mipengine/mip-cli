@@ -125,16 +125,7 @@ ERROR PORT 8000 already in use, please retry again!
 ![](./example/mip-server.png)
 
 ----
-更新mip工具，将mip模板更新到最新版本：
-
-``` bash
-$ mip update
-```
-
-![](./example/mip-update.png)
-
-----
-校验编写的mip组件，可以校验mip组件目录或者mip组件压缩包：
+在当前项目中，校验编写的mip组件，可以校验mip组件目录或者mip组件压缩包：
 
 ``` bash
 # directory
@@ -144,6 +135,15 @@ $ mip validateelement ./mip-demo.zip
 ```
 
 ![](./example/mip-validateelement.png)
+
+----
+更新mip工具，将mip模板更新到最新版本：
+
+``` bash
+$ mip update
+```
+
+![](./example/mip-update.png)
 
 ----
 
