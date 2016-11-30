@@ -146,8 +146,8 @@ describe('server-start.js mipmain', function () {
         const req = request(HOST);
         req.get('/index.html')
             .expect(200)
-            .expect(/\/miplocal\/deps\/esl/)
-            .expect(/\/miplocal\/src\/mip\.js/)
+            .expect(/\/miplocal\/dist\/mip\.css/)
+            .expect(/\/miplocal\/dist\/mip\.js/)
             .end((err, res) => {
                 assert(!err, 'mip main inject error');
                 done();
