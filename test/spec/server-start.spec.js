@@ -64,12 +64,13 @@ describe('server-start.js ', function () {
 
     it('request mip-test-element extension', function (done) {
         const req = request(HOST);
-        req.get('/local-extension-loader?name=mip-test-element')
+        req.get('/local-extension-loader/mip-test-element.js')
             .expect(200)
             .expect(/define/)
             .expect(/mip-test-element/)
             .expect(/\["mip-test-element\"\]/)
             .end((err, res) => {
+                console.log(err)
                 assert(!err, 'extension mip-test-element load error');
                 done();
             });
@@ -113,7 +114,7 @@ describe('server-start.js extensions', function () {
 
     it('request mip-test-element extension preset', function (done) {
         const req = request(HOST);
-        req.get('/local-extension-debug?name=mip-test-preset')
+        req.get('/local-extension-debug/mip-test-preset')
             .expect(200)
             .expect(/mip-test-preset/)
             .expect(/local-extension-loader/)
