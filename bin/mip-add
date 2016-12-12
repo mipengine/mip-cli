@@ -3,7 +3,7 @@
 const cli = require('../lib/cli');
 
 const args = cli.setup({
-    usage: '<page-name>',
+    usage: '<page-name> [element-name...]',
     options: [
         ['-f, --force', '是否覆盖']
     ],
@@ -15,7 +15,9 @@ const args = cli.setup({
 });
 
 var fileName = args[0];
-var modules = args.slice(1);
+var modules = args.slice(1).filter((module) => {
+    return module.match(/^mip-[\w\-]+$/);
+});
 
 if (!fileName.match(/^[\w\.\-$]+$/)) {
     cli.warn('请输入合法文件名称!');
@@ -27,6 +29,6 @@ require('../lib/update').exec().then(() => {
     require('../lib/add').exec({
         fileName: fileName,
         force: cli.program.force,
-        modules: []
+        modules: modules
     });
 });

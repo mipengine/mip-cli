@@ -73,7 +73,7 @@ module.exports = {
 在当前项目创建一个mip模板网页：
 
 ``` bash
-$ mip add index.html
+$ mip add index.html [mip-xxx...]
 ```
 
 ![](./example/mip-add.png)

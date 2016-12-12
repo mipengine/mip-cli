@@ -3,7 +3,7 @@
 const cli = require('../lib/cli');
 
 const args = cli.setup({
-    usage: '<page-name ...>',
+    usage: '<page-name...>',
     help: [
           '  Examples:',
           cli.chalk.gray('    # 检查一个mip页面'),
