@@ -34,6 +34,10 @@ $ [sudo] npm install --unsafe-perm -g mip-cli
 nodejs 5.x 安装`bufferutil`模块时可能会报编译错误，建议使用`4.4`或者`6.x`以上版本。
 
 
+_windows用户有些node版本在安装`mip-cli`时会报模块编译错误，不影响使用。_
+![windows-install-error](./example/windows-install-error.png)
+
+
 **相关ISSUES地址：**
 
 https://github.com/mipengine/mip-cli/issues

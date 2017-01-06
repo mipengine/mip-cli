@@ -9,7 +9,7 @@
 
 ## 调试mip-extensions仓库中的组件
 
-1. `git clone`最新的mip-extensions仓库到本地，然后启动`mip server`
+1.`git clone`最新的mip-extensions仓库到本地，然后启动`mip server`
 
 ```
 $ git clone https://github.com/mipengine/mip-extensions.git
@@ -17,7 +17,7 @@ $ cd mip-extensions
 $ mip server
 ```
 
-2. 创建mip组件
+2.创建mip组件
 
 在`mip-extensions`目录中创建组件：
 
@@ -30,13 +30,13 @@ $ mip addelement mip-demo
 **注意**
 `README.md`文件中必须包含组件示例代码，否则不会自动载入组件。
 
-3. 打开调试网页`http://127.0.0.1:8000/`会列出当前仓库中的组件，点击进入`mip-demo`组件预览。
+3.打开调试网页`http://127.0.0.1:8000/`会列出当前仓库中的组件，点击进入`mip-demo`组件预览。
 
 ![mip-extensions-list](./example/mip-extensions-list.png)
 
 在`mip-extensions`中修改组件代码保存后，`mip server`会自动刷新预览页面。
 
-4. 组件提交到github仓库时需要进行校验，使用：
+4.组件提交到github仓库时需要进行校验，使用：
 
 ```
 $ mip validateelement mip-demo
@@ -46,7 +46,7 @@ $ mip validateelement mip-demo
 
 校验组件，组件通过校验之后，提交到仓库.
 
-5. 需要调试组件在mip网页中的引用情况，参考`调试项目中的mip组件`
+5.需要调试组件在mip网页中的引用情况，参考`调试项目中的mip组件`
 
 ## 调试项目中的mip组件
 
@@ -86,7 +86,7 @@ mip-demo.html代码如下:
 所有组件调试时引入方式都按照线上地址就可以，`mip server`会自动进行页面注入。
 
 
-1. 修改`mip.config`的字段`extensionsDir`为'./'，注意，是'./'不是'.'。
+1.修改`mip.config`的字段`extensionsDir`为'./'，注意，是'./'不是'.'。
 
 ```javascript
     /**
@@ -97,6 +97,6 @@ mip-demo.html代码如下:
     extensionsDir: './',
 ```
 
-2. 启动mip server调试器，访问`mip-demo.html`页面可以看到，已经把项目中的`mip-demo`引入到页面了
+2.启动mip server调试器，访问`mip-demo.html`页面可以看到，已经把项目中的`mip-demo`引入到页面了
 
 ![mip-demo-project](./example/mip-demo-project.png)
