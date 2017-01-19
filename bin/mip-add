@@ -31,4 +31,6 @@ require('../lib/update').exec().then(() => {
         force: cli.program.force,
         modules: modules
     });
+}, (e) => {
+    console.error(e);
 });
