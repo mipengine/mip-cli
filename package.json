@@ -37,6 +37,7 @@
     "commander": "^2.9.0",
     "etpl": "^3.2.0",
     "express": "^4.14.0",
+    "fecs": "^1.2.2",
     "livereload": "^0.5.0",
     "mip-cli-boilerplate": "^1.0.8",
     "mip-extension-optimizer": "^1.1.1",
