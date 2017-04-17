@@ -17,7 +17,7 @@ const args = cli.setup({
 var defaultConfig = require(boilerplate.TEMPLATE_DIR + '/mip.config');
 defaultConfig.baseDir = process.cwd();
 if (args.length) {
-    require('../lib/custom').exec({
+    require('../lib/mip-custom/custom').exec({
         files: args,
         baseDir: defaultConfig.baseDir
     });
