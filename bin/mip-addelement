@@ -5,12 +5,15 @@ const cli = require('../lib/cli');
 const args = cli.setup({
     usage: '<element-name>',
     options: [
-        ['-f, --force', '是否覆盖']
+        ['-f, --force', '是否覆盖'],
+        ['-c, --custom', '是否生成定制化 mip 组件']
     ],
     help: [
         '  Examples:',
         cli.chalk.gray('    # 添加一个mip组件'),
         '    $ mip add mip-element',
+        cli.chalk.gray('    # 添加一个定制化 mip 组件'),
+        '    $ mip add mip-element -c',
     ].join('\n')
 });
 
@@ -26,6 +29,7 @@ if (!elementName.match(/^mip-[\w\-]+$/)) {
 require('../lib/update').exec().then(() => {
     require('../lib/add-element').exec({
         elementName: elementName,
-        force: cli.program.force
+        force: cli.program.force,
+        custom: cli.program.custom
     });
 });
