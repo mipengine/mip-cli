@@ -7,13 +7,13 @@ MIP脚手架.
 依赖环境: [Node.js](https://nodejs.org/en/) (>=4.x).
 
 ``` bash
-$ [sudo] npm install -g mip-cli
+$ [sudo] npm install -g mip-cli-custom
 ```
 *注意：*
 nodejs 5.x, 6.x 安装模块时，可能会报`node-gyp`相关错误，需要使用如下命令安装
 
 ```
-$ [sudo] npm install --unsafe-perm -g mip-cli
+$ [sudo] npm install --unsafe-perm -g mip-cli-custom
 ```
 nodejs 5.x 安装`bufferutil`模块时可能会报编译错误，建议使用`4.4`或者`6.x`以上版本。
 
@@ -30,33 +30,52 @@ $ mip init
 module.exports = {
 
     /**
-     * mip server调试的端口号
+     * 启动mip server调试的端口号
      *
      * @type {number}
      */
     port: 8000,
 
     /**
-     * 本地mip网页后缀名，会对mip网页动态添加调试脚本
+     * 本地mip网页后缀名，进行本地组件调试时会向页面注入本地组件
      *
      * @type {RegExp}
      */
     mipPageExt: /\.(?:html|htm|mip)$/i,
 
     /**
-     * 本地mip组件调试目录，主要用于开发组件时进行本地调试，自动将本地mip组件注入到当前访问的页面中
-     * 例如：配置'../mip-extensions'，会将此目录的组件注入到调试页面
+     * 本地mip组件调试目录，主要用于开发组件时进行本地调试，会自动将本地mip组件注入到当前访问的页面中去
      *
      * @type {string}
      */
-    extensionsDir: '',
+    extensionsDir: '../mip-extensions',
 
     /**
-     * 本地mip调试目录，用于调试本地mip项目
+     * 定制化 MIP 调试目录
      *
      * @type {string}
      */
-    mipDir: '../../../mip',
+    mipCustomDir: '../mip-custom',
+
+    /**
+     * 定制化 MIP 需要展示的内容
+     *
+     * @type {string}
+     */
+    mipCustomItems: [['template/mip-ecom','template/mip-ecom-main'], 'template/mip-recommend'],
+
+    /**
+     * 定制化 MIP 需要展示的内容
+     *
+     * @type {string}
+     */
+    mipCustomData: '',
+    /**
+     * 本地mipmain调试目录，用于调试本地mipmain项目
+     *
+     * @type {string}
+     */
+    mipDir: '../mip',
 
     /**
      * 启用调试页面自动刷新
@@ -150,7 +169,7 @@ $ mip update
 直接从官方 npm registry 安装，可能会由于网络原因，导致安装时间较长或安装失败。此时我们可以选择速度更快的 registry。
 
 ```
-$ [sudo] npm install -g mip-cli --registry=https://registry.npm.taobao.org
+$ [sudo] npm install -g mip-cli-custom --registry=https://registry.npm.taobao.org
 ```
 
 ### 预览组件
