@@ -1,6 +1,6 @@
 {
   "name": "mip-cli-custom",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "Command line interface for MIP",
   "preferGlobal": true,
   "bin": {
