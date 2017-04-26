@@ -1,6 +1,6 @@
 {
   "name": "mip-cli-custom",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "Command line interface for MIP",
   "preferGlobal": true,
   "bin": {
@@ -43,6 +43,7 @@
     "mip-cli-boilerplate": "^1.0.8",
     "mip-extension-optimizer": "^1.1.1",
     "mip-extension-validator": "^1.0.9",
+    "mip-processor-md5": "^1.0.0",
     "mip-validator": "^1.2.13",
     "request": "^2.75.0"
   },
