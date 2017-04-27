@@ -36,6 +36,22 @@ describe('validate.js ', function () {
 
     });
 
+    // test mip custom case
+    it('validate custom success', function (done) {
+
+        cmdValidate.exec({
+            files: ['mip-custom.html'],
+            custom: true,
+            baseDir: TMP_PATH
+        });
+
+        setTimeout(() => {
+            assert.ok(cli.__logMessage.indexOf('validate success') >= 0, 'validate success');
+            done();
+        }, 10);
+
+    });
+
     // test case
     it('validate error', function (done) {
 

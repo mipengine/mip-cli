@@ -53,4 +53,25 @@ describe('add-element.js', function () {
             }, 100);
         }, 100);
     });
+
+    it('addelement -c', function (done) {
+        cmdAddElement.exec({
+            elementName: 'mip-test-custom',
+            custom: true,
+            baseDir: TMP_PATH
+        });
+        setTimeout(() => {
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom')), 'mip-test directory');
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom/mip-test-custom.js')), 'mip-test-custom.js');
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom/mip-test-custom.less')), 'mip-test-custom.less');
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom/mip-test-custom.mustache')), 'mip-test-custom.mustache');
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom/mip-test-custom.json')), 'mip-test-custom.json');
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom/README.md')), 'README.md');
+            assert.ok(fs.existsSync(path.resolve(TMP_PATH, 'mip-test-custom/package.json')), 'package.json');
+
+            var content = fs.readFileSync(path.resolve(TMP_PATH, 'mip-test-custom/package.json'), 'utf-8');
+            assert.ok(content.indexOf('mip-test-custom') > 0);
+            done();
+        }, 100);
+    });
 });
