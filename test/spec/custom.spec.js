@@ -19,6 +19,7 @@ describe('custom-compile.js', function () {
     it('mip custom', function (done) {
         var pth = path.resolve(__dirname, '../test-project/mip-test-custom');
         custom.exec({
+            baseDir: pth,
             mipCustomData: "",
             mipCustomItems: [['template/mip-test-main']],
             mipCustomDir: pth,
