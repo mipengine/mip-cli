@@ -18,5 +18,6 @@ require('commander')
     .command('validateelement', cli.chalk.green('验证MIP组件'))
     .command('server', cli.chalk.green('启动MIP调试服务器'))
     .command('update', cli.chalk.green('更新cli模块'))
+    .command('custom', cli.chalk.green('编译定制化mip'))
     .parse(process.argv);
 

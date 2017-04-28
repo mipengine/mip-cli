@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const cli = require('../lib/cli');
+const boilerplate = require('mip-cli-boilerplate');
+const path = require('path');
+
+const args = cli.setup({
+	usage: '<page-name...>',
+    help: [
+          '  Examples:',
+          cli.chalk.gray('    # 编译定制化mip组件'),
+          '    $ mip custom mip-comment',
+      ].join('\n')
+});
+
+
+var defaultConfig = require(boilerplate.TEMPLATE_DIR + '/mip.config');
+defaultConfig.baseDir = process.cwd();
+if (args.length) {
+    require('../lib/mip-custom/custom').exec({
+        files: args,
+        baseDir: defaultConfig.baseDir
+    });
+}

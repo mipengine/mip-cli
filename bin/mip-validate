@@ -4,6 +4,9 @@ const cli = require('../lib/cli');
 
 const args = cli.setup({
     usage: '<page-name...>',
+    options: [
+        ['-c, --custom', '校验定制化 MIP 页面']
+    ],
     help: [
           '  Examples:',
           cli.chalk.gray('    # 检查一个mip页面'),
@@ -13,6 +16,7 @@ const args = cli.setup({
 
 if (args.length) {
     require('../lib/validate').exec({
-        files: args
+        files: args,
+        custom: cli.program.custom
     });
 }
