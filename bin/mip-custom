@@ -6,6 +6,10 @@ const path = require('path');
 
 const args = cli.setup({
 	usage: '<page-name...>',
+    options: [
+        ['-o, --output <value>', '编译输出地址'],
+        ['-c, --custom', '是否生成定制化 mip 组件']
+    ],
     help: [
           '  Examples:',
           cli.chalk.gray('    # 编译定制化mip组件'),
@@ -13,12 +17,12 @@ const args = cli.setup({
       ].join('\n')
 });
 
-
 var defaultConfig = require(boilerplate.TEMPLATE_DIR + '/mip.config');
 defaultConfig.baseDir = process.cwd();
 if (args.length) {
     require('../lib/mip-custom/custom').exec({
         files: args,
-        baseDir: defaultConfig.baseDir
+        baseDir: defaultConfig.baseDir,
+        output: cli.program.output
     });
 }
