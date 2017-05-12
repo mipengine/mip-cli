@@ -5,7 +5,8 @@ const cli = require('../lib/cli');
 const args = cli.setup({
     noArgs: true,
     options: [
-        ['-f, --force', '强制初始化']
+        ['-f, --force', '强制初始化'],
+        ['-c, --custom', '初始化定制化 MIP']
     ],
     help: [
           '初始化mip页面项目',
@@ -16,7 +17,8 @@ const args = cli.setup({
 // 检查模板更新后启动命令
 require('../lib/update').exec().then(() => {
     require('../lib/init').exec({
-        force: cli.program.force
+        force: cli.program.force,
+        custom: cli.program.custom
     });
 });
 
