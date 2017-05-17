@@ -5,7 +5,8 @@ const cli = require('../lib/cli');
 const args = cli.setup({
     usage: '<page-name> [element-name...]',
     options: [
-        ['-f, --force', '是否覆盖']
+        ['-f, --force', '是否覆盖'],
+        ['-c, --custom', '生成定制化 MIP 测试页面']
     ],
     help: [
         '    Examples:',
@@ -29,6 +30,7 @@ require('../lib/update').exec().then(() => {
     require('../lib/add').exec({
         fileName: fileName,
         force: cli.program.force,
+        custom: cli.program.custom,
         modules: modules
     });
 }, (e) => {
