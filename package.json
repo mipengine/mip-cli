@@ -45,7 +45,8 @@
     "mip-extension-validator": "^1.0.9",
     "mip-processor-md5": "^1.0.0",
     "mip-validator": "^1.2.13",
-    "request": "^2.75.0"
+    "request": "^2.75.0",
+    "rimraf": "^2.6.1"
   },
   "engines": {
     "node": ">=4.0.0"
