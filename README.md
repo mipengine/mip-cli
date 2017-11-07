@@ -26,7 +26,7 @@ $ mip init
 ```
 会创建`mip.config`文件，相关配置如下：
 
-```
+``` js
 module.exports = {
 
     /**
@@ -105,12 +105,11 @@ $ mip server
 
 注意：调试`mip-extensions`仓库组件时，会读取组件中`READEME.md`的使用示例，因此组件的`README.md`中
 应至少包含一段使用示例：
-<pre>
+
     使用示例
     ```html
-        &lt;mip-xxx&gt;&lt;/mip-xxx&gt;
+        <mip-xxx></mip-xxx>
     ```
-</pre>
 
 配置了`mipDir`之后可以调试`mip`引擎。
 
@@ -130,6 +129,7 @@ ERROR PORT 8000 already in use, please retry again!
 ``` bash
 # directory
 $ mip validateelement ./mip-demo
+
 # zip package
 $ mip validateelement ./mip-demo.zip
 ```
