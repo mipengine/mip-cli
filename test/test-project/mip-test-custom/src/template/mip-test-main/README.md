@@ -6,7 +6,7 @@ mip-test-main 组件说明
 ----|----
 类型|通用
 支持布局|responsive,fixed-height,fill,container,fixed
-所需脚本|http://mipcache.bdstatic.com/static/{版本号}/mip-test-main/mip-test-main.js
+所需脚本|http://c.mipcdn.com/static/{版本号}/mip-test-main/mip-test-main.js
 
 ## 示例
 

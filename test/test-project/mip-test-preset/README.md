@@ -6,7 +6,7 @@ mip-test-preset 组件说明
 ----|----
 类型|通用
 支持布局|responsive,fixed-height,fill,container,fixed
-所需脚本|http://mipcache.bdstatic.com/static/mip-test-preset/{版本号}/mip-test-preset.js
+所需脚本|http://c.mipcdn.com/static/mip-test-preset/{版本号}/mip-test-preset.js
 
 ## 示例
 

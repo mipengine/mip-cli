@@ -41,6 +41,7 @@ describe('server-start.js ', function () {
             .expect('Content-Type', /html/)
             .expect(200)
             .expect(/mipcache\.bdstatic\.com/)
+            .expect(/c\.mipcdn\.com/)
             .expect(/name="viewport"/)
             .end((err, res) => {
                 assert(!err, 'project mip.html error');
