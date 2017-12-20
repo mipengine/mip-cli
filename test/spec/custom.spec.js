@@ -6,7 +6,7 @@ const execSync = require('child_process').execSync;
 const assert = require('assert');
 const del = require('del');
 
-describe('custom-compile.js', function () {
+describe.skip('custom-compile.js', function () {
     before(function () {
         fs.mkdirSync(TMP_PATH);
     });

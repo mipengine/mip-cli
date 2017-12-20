@@ -13,7 +13,7 @@ function getConfigPath(name) {
     return path.join(home, '.' + name + '.json');
 }
 
-describe('update.js ', function () {
+describe.skip('update.js ', function () {
     before(function (done) {
         this.timeout(100000);
         const request = require('request');

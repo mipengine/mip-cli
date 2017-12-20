@@ -1,5 +1,7 @@
 # MIP CLI 工具
 
+[![Build Status](https://travis-ci.org/mipengine/mip-cli.svg?branch=master)](https://travis-ci.org/mipengine/mip-cli)
+
 MIP脚手架.
 
 ### 安装

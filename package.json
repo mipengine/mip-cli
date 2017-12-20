@@ -28,7 +28,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "fecs . --rule --reporter=baidu",
-    "test": "env NODE_ENV=test mocha --recursive test/spec/**/*.spec.js"
+    "test": "env NODE_ENV=test mocha --timeout 5000 --recursive test/spec/**/*.spec.js",
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "bluebird": "^3.5.0",

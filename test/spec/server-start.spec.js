@@ -127,7 +127,7 @@ describe('server-start.js extensions', function () {
 });
 
 
-describe('server-start.js mipmain', function () {
+describe.skip('server-start.js mipmain', function () {
     before(function (done) {
         //this.timeout(100000)
         cmdServer.exec({
