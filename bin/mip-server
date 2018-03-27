@@ -4,6 +4,7 @@ const cli = require('../lib/cli');
 const fs = require('fs');
 const path = require('path');
 const boilerplate = require('mip-cli-boilerplate');
+const merge = require('deepmerge');
 
 const args = cli.setup({
     noArgs: true,
@@ -24,7 +25,8 @@ defaultConfig.baseDir = process.cwd();
 var configPath = path.join(defaultConfig.baseDir, 'mip.config');
 // 加载用户定义配置
 if (fs.existsSync(configPath)) {
-    Object.assign(defaultConfig, require(configPath));
+    defaultConfig = merge(defaultConfig, require(configPath));
+    
     // 设置是否extensions目录，用于调试时启用不同的配置
     defaultConfig.isExtensionsDir = defaultConfig.extensionsDir === '.';
 }

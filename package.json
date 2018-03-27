@@ -1,6 +1,6 @@
 {
   "name": "mip-cli",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Command line interface for MIP",
   "preferGlobal": true,
   "bin": {
@@ -26,7 +26,7 @@
     },
     {
       "name": "Jackson",
-       "email": "smartfutureplayer@gmail.com"
+      "email": "smartfutureplayer@gmail.com"
     },
     {
       "name": "xuexb",
@@ -49,6 +49,7 @@
     "child_process": "^1.0.2",
     "chokidar": "^1.6.1",
     "commander": "^2.9.0",
+    "deepmerge": "^2.1.0",
     "etpl": "^3.2.0",
     "express": "^4.14.0",
     "fecs": "~1.4.1",
